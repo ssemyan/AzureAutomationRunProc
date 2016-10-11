@@ -3,18 +3,15 @@
     Runs the specified SQL Server stored proceedure.
 
 .DESCRIPTION
-    This runbook will run a stored procedure on a SQL server and return the results. 
+    This script will run a stored procedure on a SQL server and return the results. 
 
-    In order for this runbook to work, the SQL Server must be accessible from the runbook worker
-    running this runbook. Make sure the SQL Server allows incoming connections from Azure services
+    In order for this script to work, the SQL Server must be accessible. For running within Azure
+    (e.g. Azure Automation), make sure the SQL Server allows incoming connections from Azure services
     by selecting 'Allow Windows Azure Services' on the SQL Server configuration page in Azure.
 
-    This runbook also requires an Automation Credential asset be created before the runbook is
-    run, which stores the username and password of an account with access to the SQL Server.
-    That credential should be referenced for the SqlCredential parameter of this runbook.
-
-    More information about Powershell Workflows can be found here: 
-    https://blogs.technet.microsoft.com/heyscriptingguy/2012/12/26/powershell-workflows-the-basics/ 
+    If run within an Azure Automation account, this script requires an Automation Credential to be created
+    which stores the username and password of an account with access to the SQL Server.
+    That credential should be referenced for the SqlCredential parameter of this script.
 
 .PARAMETER SqlServer
     String name of the SQL Server to connect to
